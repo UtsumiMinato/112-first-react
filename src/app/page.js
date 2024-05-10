@@ -70,7 +70,7 @@ export default function Home() {
       <Card
         className="max-w-sm"
         imgAlt="Meaningful alt text for an image that is not purely decorative"
-        imgSrc="/images/blog/image-1.jpg"
+        imgSrc="https://flowbite-react.com/images/blog/image-1.jpg"
       >
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Noteworthy technology acquisitions 2021

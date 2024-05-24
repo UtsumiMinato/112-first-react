@@ -1,3 +1,6 @@
+/* 
+* ＠author 林彥佑 <newxmith@gmail.com>
+*/
 import Link from "next/link";
 import {
   Navbar,
@@ -15,6 +18,23 @@ import {
 } from "flowbite-react";
 
 export default function Home() {
+
+  const items = [
+    { cover: "./banner/banner-3.jpg",
+      name: "北港朝天宮",
+      description: "北港朝天宮（台文：Pak Káng Tiâu Thian Keng），俗稱北港媽（台文：Pak Káng Má），當地人稱媽祖宮、媽祖廟（台文：Má Chó͘ keng），舊稱為天后宮。是一座位在臺灣雲林縣北港鎮光民里的媽祖廟，主祀天上聖母媽祖。",
+    },
+    { cover: "./banner/banner-2.jpg",
+      name: "臺米菜飯",
+      description: "就賣吃的，不然我也不知道賣什麼的，看圖片應該看得出來吧，都有菜單了，還有燈籠也有寫，應該沒有這麼難理解吧，不要看到旁邊那個看起來像是電影廣告看板的東西以為是電影院嘿，再補一點字好了，旁邊那個藍色的窗戶是好看的，點餐的在圖片外面的右邊。",
+    },
+    { cover: "./banner/banner-4.jpg",
+      name: "西螺大橋",
+      description: "西螺大橋是台灣公路橋梁，前身在日治時期稱濁水溪大橋[5]，位於彰化縣與雲林縣之間，橫跨濁水溪下游，以華倫式桁架橋設計，連接北端之溪州鄉、南端之西螺鎮二地的交通，西螺大橋是僅次於美國舊金山金門大橋的世界第二大橋，也是當時全台灣最長的橋梁，被譽為「遠東第一大橋」。",
+    },
+  ];
+
+
   return (
     <>
       <div className="bg-slate-500">
@@ -51,41 +71,41 @@ export default function Home() {
       <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel slide={false}>
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+            src="./banner/banner-1.jpg"
             alt="..."
           />
+            <img
+              src="./banner/banner-2.jpg"
+              alt="..."
+            />
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-            alt="..."
+            src="./banner/banner-3.jpg"
+            alt="由 WU PEI HSUAN - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=110297869"
           />
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-            alt="..."
+            src="./banner/banner-5.jpg"
+            alt="由 Mk2010 - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=34143199"
           />
           <img
-            src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-            alt="..."
+            src="./banner/banner-6.jpg"
+            alt="由 Fcuk1203 - 自己的作品, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17302330"
           />
         </Carousel>
       </div>
 
-      <div className="bg-[#fff]">
-        <div className="container mx-auto py-8">
+      <div className="bg-[#fff] py-16">
+        <div className="container mx-auto grid grid-cols-4 gap-4">
+          { items.map( item => 
           <Card
             className="max-w-sm"
             imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc="https://flowbite-react.com/images/blog/image-1.jpg"
+            imgSrc={item.cover}
           >
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Noteworthy technology acquisitions 2021
+              { item.name }
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
+              { item.description }
             </p>
             <Button>
               Read more
@@ -103,6 +123,7 @@ export default function Home() {
               </svg>
             </Button>
           </Card>
+          )}
         </div>
       </div>
 

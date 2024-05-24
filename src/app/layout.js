@@ -1,3 +1,6 @@
+/* 
+* @author 林彥佑 <newxmith@gmail.com>
+*/
 import { Inter } from "next/font/google";
 import "./globals.css";
 // import { Flowbite } from "flowbite-react";

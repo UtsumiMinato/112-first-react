@@ -17,6 +17,8 @@ import {
   Button,
 } from "flowbite-react";
 
+import CustomCard from "@/app/components/Card"
+
 export default function Home() {
 
   const items = [
@@ -28,7 +30,7 @@ export default function Home() {
       name: "臺米菜飯",
       description: "就賣吃的，不然我也不知道賣什麼的，看圖片應該看得出來吧，都有菜單了，還有燈籠也有寫，應該沒有這麼難理解吧，不要看到旁邊那個看起來像是電影廣告看板的東西以為是電影院嘿，再補一點字好了，旁邊那個藍色的窗戶是好看的，點餐的在圖片外面的右邊。",
     },
-    { cover: "./banner/banner-4.jpg",
+    { cover: "./banner/banner-6.jpg",
       name: "西螺大橋",
       description: "西螺大橋是台灣公路橋梁，前身在日治時期稱濁水溪大橋[5]，位於彰化縣與雲林縣之間，橫跨濁水溪下游，以華倫式桁架橋設計，連接北端之溪州鄉、南端之西螺鎮二地的交通，西螺大橋是僅次於美國舊金山金門大橋的世界第二大橋，也是當時全台灣最長的橋梁，被譽為「遠東第一大橋」。",
     },
@@ -123,6 +125,14 @@ export default function Home() {
               </svg>
             </Button>
           </Card>
+          )}
+        </div>
+      </div>
+
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          { items.map( item =>
+            <CustomCard item={item}/>
           )}
         </div>
       </div>

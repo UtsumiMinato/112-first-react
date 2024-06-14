@@ -2,19 +2,27 @@
  * ＠author 林彥佑 <newxmith@gmail.com>
  */
 
+// export default function CustomCard({ itme }) {
+//   return (
+//     <>
+//       <h5></h5>
+//     </>
+//   );
+// }
+
 import { Card, Button } from "flowbite-react";
 export default function CustomCard({item}) {
     return (
           <Card
             className="max-w-sm"
             imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc={item.cover}
+            imgSrc={item.Picture.PictureUrl1}
           >
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              { item.name }
+              { item.ScenicSpotName }
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              { item.description }
+              { item.Description }
             </p>
             <Button>
               Read more

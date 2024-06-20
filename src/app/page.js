@@ -33,7 +33,7 @@ export default function Home() {
   //頁面載入後會執行的程式 “useEffect”
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('api/items');
+      const response = await fetch("api/items");
       const data = await response.json();
       console.log(data);
       setItems(data);
@@ -47,8 +47,11 @@ export default function Home() {
         <div className="container mx-auto">
           <Navbar fluid className="bg-slate-500">
             <NavbarBrand as={Link} href="/">
-              <Image layout="intrinsic"
+              <Image
                 src="https://www.yuntech.edu.tw/images/website_png/Group_640.png"
+                layout="intrinsic"
+                width={396}
+                height={44}
                 className="mr-3 h-6 sm:h-9"
                 alt="Flowbite React Logo"
               />
@@ -74,20 +77,41 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <div className="h-96 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel slideInterval={5000}>
-          <Image layout="intrinsic"  src="./banner/banner-1.jpg" alt="..." />
-          <Image layout="intrinsic" src="./banner/banner-2.jpg" alt="..." />
-          <Image layout="intrinsic"
-            src="./banner/banner-3.jpg"
+          <Image
+            layout="intrinsic"
+            width={3000}
+            height={2000}
+            src="/banner/banner-1.jpg"
+            alt="..."
+          />
+          <Image
+            layout="intrinsic"
+            width={3000}
+            height={2000}
+            src="/banner/banner-2.jpg"
+            alt="..."
+          />
+          <Image
+            layout="intrinsic"
+            width={1300}
+            height={868}
+            src="/banner/banner-3.jpg"
             alt="由 WU PEI HSUAN - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=110297869"
           />
-          <Image layout="responsive"
-            src="./banner/banner-5.jpg"
+          <Image
+            layout="intrinsic"
+            width={4329}
+            height={2886}
+            src="/banner/banner-5.jpg"
             alt="由 Mk2010 - 自己的作品, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=34143199"
           />
-          <Image layout="intrinsic"
-            src="./banner/banner-6.jpg"
+          <Image
+            layout="intrinsic"
+            width={945}
+            height={630}
+            src="/banner/banner-6.jpg"
             alt="由 Fcuk1203 - 自己的作品, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=17302330"
           />
         </Carousel>
@@ -95,7 +119,7 @@ export default function Home() {
 
       <div className="bg-[#fff] py-16">
         <div className="container mx-auto grid grid-cols-4 gap-4">
-          {items.map((item ,index) => (
+          {items.map((item, index) => (
             <CustomCard item={item} key={index} />
           ))}
         </div>

@@ -2,43 +2,30 @@
  * ＠author 林彥佑 <newxmith@gmail.com>
  */
 
-// export default function CustomCard({ itme }) {
-//   return (
-//     <>
-//       <h5></h5>
-//     </>
-//   );
-// }
+import Image from "next/image";
 
-import { Card, Button } from "flowbite-react";
-export default function CustomCard({item}) {
-    return (
-          <Card
-            className="max-w-sm"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc={item.Picture.PictureUrl1}
-          >
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              { item.ScenicSpotName }
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400 line-clamp-5">
-              { item.Description }
-            </p>
-            <Button>
-              Read more
-              <svg
-                className="-mr-1 ml-2 h-4 w-4"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Button>
-          </Card>
-    )
+export default function CustomCard({ item }) {
+  return (
+    <div className="max-w-sm border rounded-md flex flex-col relative bg-white drop-shadow-md">
+      <div className="h-52 w-full relative rounded-t-md overflow-hidden">
+        <Image
+          layout="fill"
+          objectFit="cover"
+          alt="Meaningful alt text for an image that is not purely decorative"
+          src={item.Picture.PictureUrl1}
+        />
+      </div>
+      <div className="flex-grow bg-white m-1.5">
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-1.5 mb-1.5">
+          {item.ScenicSpotName}
+        </h5>
+        <p className="font-normal text-gray-700 dark:text-gray-400 line-clamp-5">
+          {item.Description}
+        </p>
+      </div>
+      <button className="bg-teal-400 rounded-md p-1.5 m-1.5 drop-shadow-md">
+        <p className="text-slate-100">Read more</p>
+      </button>
+    </div>
+  );
 }

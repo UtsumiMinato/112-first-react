@@ -21,6 +21,7 @@ import {
 } from "flowbite-react";
 
 import CustomCard from "./components/Card";
+import AutoSizeImage from "./components/AutoSizeImage"
 
 export default function Home() {
   const [items, setItems] = useState([]); //預設items空陣列
@@ -43,9 +44,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="bg-slate-500">
+      <div className="bg-teal-600">
         <div className="container mx-auto">
-          <Navbar fluid className="bg-slate-500">
+          <Navbar fluid className="bg-teal-600">
             <NavbarBrand as={Link} href="/">
               <Image
                 src="https://www.yuntech.edu.tw/images/website_png/Group_640.png"
@@ -77,7 +78,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-96 sm:h-64 xl:h-80 2xl:h-96">
+      <div className="sm:h-64 xl:h-80 2xl:h-96 ">
         <Carousel slideInterval={5000}>
           <Image
             layout="intrinsic"
@@ -93,6 +94,7 @@ export default function Home() {
             src="/banner/banner-2.jpg"
             alt="..."
           />
+
           <Image
             layout="intrinsic"
             width={1300}
@@ -118,7 +120,7 @@ export default function Home() {
       </div>
 
       <div className="bg-[#fff] py-16">
-        <div className="container mx-auto grid grid-cols-4 gap-4">
+        <div className="container mx-auto grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
           {items.map((item, index) => (
             <CustomCard item={item} key={index} />
           ))}
